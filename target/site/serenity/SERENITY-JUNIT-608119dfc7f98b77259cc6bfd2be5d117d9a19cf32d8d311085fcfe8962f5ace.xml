@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="1" name="Edicilon de unidad de transporte en plataforma fleetguar360" skipped="0" tests="2" time="2.6" timestamp="2025-07-02 01:09:15"><testcase name="Edicion con campos obligatorios vacios"><failure message="&#10;Expected: &lt;true&gt;&#10;     but: was &lt;false&gt;" type="java.lang.AssertionError">
+Expected: &lt;true&gt;
+     but: was &lt;false&gt;</failure><system-err>
+Expected: &lt;true&gt;
+     but: was &lt;false&gt;&#13;
+co.edu.udea.calidadv.fleetguar360.stepdefinitions.EditUnitStepDefinition.noDejaSalirDelFormulario(EditUnitStepDefinition.java:48)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)&#13;
+worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)&#13;
+</system-err></testcase><testcase name="Edicion exitosa de los campos permitidos"/></testsuite>

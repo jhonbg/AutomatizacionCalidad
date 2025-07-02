@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Edicilon de unidad de transporte en plataforma fleetguar360" skipped="0" tests="2" time="2.76" timestamp="2025-07-02 01:25:52"><testcase name="Edicion exitosa de los campos permitidos"/><testcase name="Edicion con campos obligatorios vacios"/></testsuite>
