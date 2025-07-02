@@ -14,9 +14,9 @@ public class accionesEditUnit implements Interaction {
     public <T extends Actor> void performAs(T actor) {
         actor.wasAbleTo(Click.on(buttonGestionFlota));
         actor.wasAbleTo(Click.on(buttonEditor));
-        actor.attemptsTo(Enter.theValue(Keys.chord(Keys.CONTROL, "a") + "ABC-124").into(placa));
-        actor.attemptsTo(Enter.theValue(Keys.chord(Keys.CONTROL, "a") + "Toyota Hilux 2023").into(modelo));
-        actor.attemptsTo(Enter.theValue(Keys.chord(Keys.CONTROL, "a") + "2 toneladas").into(capacidad));
+        actor.attemptsTo(Enter.theValue(Keys.chord(Keys.CONTROL, "a") + "ABC-124").into(placaE));
+        actor.attemptsTo(Enter.theValue(Keys.chord(Keys.CONTROL, "a") + "Toyota Hilux 2023").into(modeloE));
+        actor.attemptsTo(Enter.theValue(Keys.chord(Keys.CONTROL, "a") + "2 toneladas").into(capacidadE));
         actor.wasAbleTo(Click.on(buttonGuardarCambios));
     }
 

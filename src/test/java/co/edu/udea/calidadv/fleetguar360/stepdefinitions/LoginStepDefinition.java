@@ -54,11 +54,6 @@ public class LoginStepDefinition {
         usuario.should(seeThat(ValidationLogin.validaLogin(), equalTo(true)));
     }
 
-    @Given("Que estoy en el sitio FleetGuard360")
-    public void AlSitioFleetguar360() {
-        usuario.wasAbleTo(Open.browserOn(fleetguar360Interface));
-    }
-
     @When("ingreso un usuario y contrasena invalidos")
     public void ingresoUnUsuarioYContrasenaInvalidos() {
         usuario.attemptsTo(LoginErroneo.conCredencialesInvalidas());

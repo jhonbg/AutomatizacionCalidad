@@ -1,6 +1,7 @@
 package co.edu.udea.calidadv.fleetguar360.stepdefinitions;
 
 import co.edu.udea.calidadv.fleetguar360.questions.ValidationEditUnit;
+import co.edu.udea.calidadv.fleetguar360.questions.ValidationEditUnitError;
 import co.edu.udea.calidadv.fleetguar360.tasks.EditUnit;
 import co.edu.udea.calidadv.fleetguar360.tasks.EditUnitError;
 import co.edu.udea.calidadv.fleetguar360.userinterfaces.Fleetguar360Interface;
@@ -47,11 +48,6 @@ public class EditUnitStepDefinition {
         usuario.should(seeThat(ValidationEditUnit.validationEditUnit(), equalTo(true)));
     }
 
-    @Given("Que El Usuario Esta En El Formulario")
-    public void QueElUsuarioEstaEnElFormulario() {
-        OnStage.theActorInTheSpotlight().wasAbleTo(Open.url("https://fleet-guar360.vercel.app/gestionFlota"));
-    }
-
     @When("el usuario deja los campos obligatorios vacios y hace clic en guardar cambios")
     public void elUsuarioDejaLosCamposObligatoriosVaciosHaceClicEn() {
         usuario.attemptsTo(EditUnitError.editUnitError());
@@ -59,6 +55,6 @@ public class EditUnitStepDefinition {
 
     @Then("no deja salir del formulario")
     public void noDejaSalirDelFormulario() {
-        //todo task
+        usuario.should(seeThat(ValidationEditUnitError.validationEditUnitError(), equalTo(true)));
     }
 }
