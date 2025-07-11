@@ -6,12 +6,21 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
 public class LoginErroneo implements Task {
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(accionesLoginError.loginUsuario());
+
+    private final String correo;
+    private final String contrasena;
+
+    public LoginErroneo(String correo, String contrasena) {
+        this.correo = correo;
+        this.contrasena = contrasena;
     }
 
-    public static LoginErroneo conCredencialesInvalidas(){
-        return Tasks.instrumented(LoginErroneo.class);
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(accionesLoginError.loginUsuario(correo, contrasena));
+    }
+
+    public static LoginErroneo conCredencialesInvalidas(String correo, String contrasena) {
+        return Tasks.instrumented(LoginErroneo.class, correo, contrasena);
     }
 }

@@ -38,9 +38,9 @@ public class EditUnitStepDefinition {
         OnStage.theActorInTheSpotlight().wasAbleTo(Open.url("https://fleet-guar360.vercel.app/gestionFlota"));
     }
 
-    @When("el usuario empieza hacer la modificacion de los campos y hace clic en guardar cambios")
-    public void elUsuariempizaHacerLaModificacionDeLosCamposYHacerLaClicEn() {
-        usuario.attemptsTo(EditUnit.editUnit());
+    @When("el usuario empieza hacer la modificacion de los campos placa {string}, modelo {string}, capacidad {string} y hace clic en guardar cambios")
+    public void elUsuariempizaHacerLaModificacionDeLosCamposYHacerLaClicEn(String placa, String modelo, String capacidad) {
+        usuario.attemptsTo(EditUnit.editUnit( placa, modelo, capacidad));
     }
 
     @Then("la vista se actualiza mostrando los nuevos datos")

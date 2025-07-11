@@ -44,9 +44,9 @@ public class LoginStepDefinition {
         usuario.wasAbleTo(Open.browserOn(fleetguar360Interface));
     }
 
-    @When("ingreso mi usuario y contrasena")
-    public void cuandoIntroduscaMiUsuarioYContrasena() {
-       usuario.attemptsTo(Login.LoginUsuario());
+    @When("ingreso mi usuario {string} y contrasena {string}")
+    public void cuandoIntroduscaMiUsuarioYContrasena(String correo, String contrasena) {
+       usuario.attemptsTo(Login.LoginUsuario(correo ,contrasena));
     }
 
     @Then("me redirige a la pagina principal para acceder a la informacion de la plataforma")
@@ -54,9 +54,9 @@ public class LoginStepDefinition {
         usuario.should(seeThat(ValidationLogin.validaLogin(), equalTo(true)));
     }
 
-    @When("ingreso un usuario y contrasena invalidos")
-    public void ingresoUnUsuarioYContrasenaInvalidos() {
-        usuario.attemptsTo(LoginErroneo.conCredencialesInvalidas());
+    @When("ingreso un usuario {string} y contrasena {string} invalidos")
+    public void ingresoUnUsuarioYContrasenaInvalidos(String correo, String contrasena) {
+        usuario.attemptsTo(LoginErroneo.conCredencialesInvalidas(correo, contrasena));
     }
 
     @Then("me saca un mensaje que dice Credenciales incorrectas")

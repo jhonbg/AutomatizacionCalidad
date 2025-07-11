@@ -7,12 +7,20 @@ import net.serenitybdd.screenplay.Tasks;
 
 public class Login implements Task {
 
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(accionesLogin.loginUsuario());
+    private final String correo;
+    private final String contrasena;
+
+    public Login(String usuario, String contrasena) {
+        this.correo = usuario;
+        this.contrasena = contrasena;
     }
 
-    public static Login LoginUsuario() {
-        return Tasks.instrumented(Login.class);
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(accionesLogin.loginUsuario(correo, contrasena));
+    }
+
+    public static Login LoginUsuario(String usuario, String contrasena) {
+        return Tasks.instrumented(Login.class, usuario,contrasena);
     }
 }

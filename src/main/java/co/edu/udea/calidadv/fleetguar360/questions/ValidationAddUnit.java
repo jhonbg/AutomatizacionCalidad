@@ -2,18 +2,25 @@ package co.edu.udea.calidadv.fleetguar360.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.questions.Text;
 
-import static co.edu.udea.calidadv.fleetguar360.userinterfaces.Fleetguar360Interface.newUnit;
+import static co.edu.udea.calidadv.fleetguar360.userinterfaces.Fleetguar360Interface.*;
 
 public class ValidationAddUnit implements Question<Boolean> {
-    @Override
-    public Boolean answeredBy(Actor actor) {
-        String numeroIdUnit = Text.of(newUnit).answeredBy(actor);
-        return numeroIdUnit.equals("006");
+
+    private final int filasAntes;
+
+    public ValidationAddUnit(int filasAntes) {
+
+        this.filasAntes = filasAntes;
     }
 
-    public static ValidationAddUnit validationAddUnit(){
-        return new ValidationAddUnit();
+    @Override
+    public Boolean answeredBy(Actor actor) {
+        int filasDespues = nuberUnit.resolveAllFor(actor).size();
+        return filasDespues == filasAntes + 1;
+    }
+
+    public static ValidationAddUnit validationAddUnit(int filasAntes) {
+        return new ValidationAddUnit(filasAntes);
     }
 }

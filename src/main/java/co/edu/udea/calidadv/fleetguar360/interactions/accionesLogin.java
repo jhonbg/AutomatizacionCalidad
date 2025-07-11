@@ -10,14 +10,22 @@ import static co.edu.udea.calidadv.fleetguar360.userinterfaces.Fleetguar360Inter
 
 public class accionesLogin implements Interaction {
 
+    private final String correo;
+    private final String contrasena;
+
+    public accionesLogin(String correo, String contrasena) {
+        this.correo = correo;
+        this.contrasena = contrasena;
+    }
+
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Enter.theValue("usuarioTest@gmail.com").into(email));
-        actor.attemptsTo(Enter.theValue("ABCD1234").into(password));
+        actor.attemptsTo(Enter.theValue(correo).into(email));
+        actor.attemptsTo(Enter.theValue(contrasena).into(password));
         actor.wasAbleTo(Click.on(buttonLogin));
     }
 
-    public static accionesLogin loginUsuario(){
-        return Tasks.instrumented(accionesLogin.class);
+    public static accionesLogin loginUsuario(String usuario, String contrasena) {
+        return Tasks.instrumented(accionesLogin.class, usuario, contrasena);
     }
 }

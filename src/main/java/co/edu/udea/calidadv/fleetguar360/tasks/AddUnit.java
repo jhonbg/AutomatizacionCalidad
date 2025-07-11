@@ -6,12 +6,23 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 
 public class AddUnit implements Task {
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(accionesAddUnit.clickAgregarUnidad());
+
+    private final String placa;
+    private final String modelo;
+    private final String capacidad;
+
+    public AddUnit(String placa, String modelo, String capacidad){
+        this.placa = placa;
+        this.modelo = modelo;
+        this.capacidad = capacidad;
     }
 
-    public static AddUnit addUnit(){
-        return Tasks.instrumented(AddUnit.class);
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        actor.attemptsTo(accionesAddUnit.clickAgregarUnidad(placa,modelo,capacidad));
+    }
+
+    public static AddUnit addUnit(String placa, String modelo, String capacidad){
+        return Tasks.instrumented(AddUnit.class, placa, modelo, capacidad);
     }
 }

@@ -27,7 +27,7 @@ public class Fleetguar360Interface extends PageObject {
     public static final Target primerConductor = Target.the("primerConductor").locatedBy("//div[@role='option']//span[text()='Juan Pérez']");
     public static final Target capacidadA = Target.the("capacidadA").locatedBy("/html/body/div[3]/form/div[4]/input");
     public static final Target buttonGuardarUnidad = Target.the("buttonGuardarUnidad").locatedBy("/html/body/div[3]/form/div[6]/button[2]");
-    public static final Target newUnit = Target.the("newUnit").locatedBy("//*[@id=\"__next\"]/div/div[2]/div/div[2]/div/div/table/tbody/tr[6]/td[1]");
+    public static final Target nuberUnit = Target.the("all rows in table").locatedBy("//*[@id=\"__next\"]/div/div[2]/div/div[2]/div/div/table/tbody/tr");
     public static final Target mesPlacaA = Target.the("mesPlacaA").locatedBy("/html/body/div[3]/form/div[1]/p");
     public static final Target mesModeloA = Target.the("mesModeloA").locatedBy("/html/body/div[3]/form/div[2]/p");
     public static final Target mesCapacidadA =  Target.the("mesCapacidadA").locatedBy("/html/body/div[3]/form/div[4]/p");

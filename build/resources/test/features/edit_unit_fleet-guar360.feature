@@ -9,9 +9,13 @@
     Background:
       Given que el usuario esta en el formulario
 
-    Scenario: Edicion exitosa de los campos permitidos
-      When el usuario empieza hacer la modificacion de los campos y hace clic en guardar cambios
+    Scenario Outline: Edicion exitosa de los campos permitidos
+      When el usuario empieza hacer la modificacion de los campos placa "<placa>", modelo "<modelo>", capacidad "<capacidad>" y hace clic en guardar cambios
       Then la vista se actualiza mostrando los nuevos datos
+
+      Examples:
+        | placa    | modelo            | capacidad   |
+        | ABC-124  | Toyota Hilux 2023 | 2 toneladas |
 
     Scenario: Edicion con campos obligatorios vacios
       When el usuario deja los campos obligatorios vacios y hace clic en guardar cambios
