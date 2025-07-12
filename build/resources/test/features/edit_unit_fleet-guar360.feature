@@ -17,6 +17,10 @@
         | placa    | modelo            | capacidad   |
         | ABC-124  | Toyota Hilux 2023 | 2 toneladas |
 
-    Scenario: Edicion con campos obligatorios vacios
+    Scenario Outline: Edicion con campos obligatorios vacios
       When el usuario deja los campos obligatorios vacios y hace clic en guardar cambios
-      Then no deja salir del formulario
+      Then no deja salir del formulario y salen mesajes "<mesPlaca>""<mesModelo>""<mesCapacidad>"
+
+      Examples:
+        | mesPlaca                                   | mesModelo                                  | mesCapacidad               |
+        | La placa debe tener al menos 6 caracteres  | El modelo debe tener al menos 3 caracteres | Debe ingresar la capacidad |

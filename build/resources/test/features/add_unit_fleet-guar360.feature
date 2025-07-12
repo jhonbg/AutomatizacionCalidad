@@ -18,7 +18,10 @@
         | ABC-124  | Toyota Hilux 2023 | 2 toneladas |
         | ADC-321  | Toyota 2022       | 3 toneladas |
 
-    Scenario: Intentar agregar unidad dejando campos obligatorios vacíos
+    Scenario Outline: Intentar agregar unidad dejando campos obligatorios vacíos
       When el usuario deja los campos obligatorios vacíos y hace clic en el boton guardar
-      Then se muestra un mensaje indicando que debe completar todos los campos requeridos
+      Then se muestra un mensaje indicando que debe completar todos los campos requeridos "<mesPlaca>""<mesModelo>""<mesCapacidad>"
 
+      Examples:
+        | mesPlaca                                   | mesModelo                                  | mesCapacidad               |
+        | La placa debe tener al menos 6 caracteres  | El modelo debe tener al menos 3 caracteres | Debe ingresar la capacidad |

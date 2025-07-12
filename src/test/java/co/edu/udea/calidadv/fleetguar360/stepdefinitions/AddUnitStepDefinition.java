@@ -63,8 +63,8 @@ public class AddUnitStepDefinition {
         usuario.attemptsTo(AddUnitError.clickAgregarUnidad());
     }
 
-    @Then("se muestra un mensaje indicando que debe completar todos los campos requeridos")
-    public void seMuestraUnMensajeIndicandoQueDebeCompletarTodosLosCamposRequeridos() {
-        usuario.should(seeThat(ValidationAddUnitError.clickAgregarUnidad(), equalTo(true)));
+    @Then("se muestra un mensaje indicando que debe completar todos los campos requeridos {string}{string}{string}")
+    public void seMuestraUnMensajeIndicandoQueDebeCompletarTodosLosCamposRequeridos(String mesPlaca, String mesModelo, String mesCapacidad) {
+        usuario.should(seeThat(ValidationAddUnitError.clickAgregarUnidad(mesPlaca, mesModelo, mesCapacidad), equalTo(true)));
     }
 }

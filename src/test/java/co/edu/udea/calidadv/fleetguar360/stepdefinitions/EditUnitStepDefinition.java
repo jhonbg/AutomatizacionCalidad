@@ -53,8 +53,8 @@ public class EditUnitStepDefinition {
         usuario.attemptsTo(EditUnitError.editUnitError());
     }
 
-    @Then("no deja salir del formulario")
-    public void noDejaSalirDelFormulario() {
-        usuario.should(seeThat(ValidationEditUnitError.validationEditUnitError(), equalTo(true)));
+    @Then("no deja salir del formulario y salen mesajes {string}{string}{string}")
+    public void noDejaSalirDelFormulario(String mesPlaca, String mesModelo, String mesCapacidad) {
+        usuario.should(seeThat(ValidationEditUnitError.validationEditUnitError(mesPlaca, mesModelo, mesCapacidad), equalTo(true)));
     }
 }

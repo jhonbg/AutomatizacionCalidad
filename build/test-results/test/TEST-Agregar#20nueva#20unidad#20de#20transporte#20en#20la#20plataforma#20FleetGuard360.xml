@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Agregar nueva unidad de transporte en la plataforma FleetGuard360" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-07-11T23:54:10" hostname="DESKTOP-R07ACRQ" time="10.342">
+<testsuite name="Agregar nueva unidad de transporte en la plataforma FleetGuard360" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-07-12T00:32:48" hostname="DESKTOP-R07ACRQ" time="10.339">
   <properties/>
-  <testcase name="Agregar unidad exitosamente #1" classname="Agregar nueva unidad de transporte en la plataforma FleetGuard360" time="5.897"/>
-  <testcase name="Agregar unidad exitosamente #2" classname="Agregar nueva unidad de transporte en la plataforma FleetGuard360" time="2.107"/>
-  <testcase name="Intentar agregar unidad dejando campos obligatorios vacíos" classname="Agregar nueva unidad de transporte en la plataforma FleetGuard360" time="2.338"/>
-  <system-out><![CDATA[filasAntes: 5
-filas despues: 6
-filasAntes: 5
-filas despues: 6
-]]></system-out>
+  <testcase name="Agregar unidad exitosamente #1" classname="Agregar nueva unidad de transporte en la plataforma FleetGuard360" time="6.096"/>
+  <testcase name="Agregar unidad exitosamente #2" classname="Agregar nueva unidad de transporte en la plataforma FleetGuard360" time="2.013"/>
+  <testcase name="Intentar agregar unidad dejando campos obligatorios vacíos" classname="Agregar nueva unidad de transporte en la plataforma FleetGuard360" time="2.23"/>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[[Test worker] INFO  - 
   _____   ___   ___   _____     ___   _____     _     ___   _____   ___   ___  
  |_   _| | __| / __| |_   _|   / __| |_   _|   /_\   | _ \ |_   _| | __| |   \ 
@@ -19,10 +15,10 @@ Agregar unidad exitosamente(agregar-nueva-unidad-de-transporte-en-la-plataforma-
 --------------------------------------------------------------------------------
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Starting Chrome driver instance with capabilities:
 [Test worker] INFO net.serenitybdd.core.webdriver.driverproviders.ChromeDriverProvider - Capabilities {acceptInsecureCerts: true, browserName: chrome, goog:chromeOptions: {args: [--start-maximized, --test-type, --no-sandbox, --ignore-certificate-errors, \n                   --disa..., --disable-default-apps, --disable-extensions-file-a..., \n                   --inco..., --disable-infobars,--disabl..., --remote-allow-origins=*], extensions: []}}
-Jul 11, 2025 6:54:13 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Jul 11, 2025 7:32:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 138
-Jul 11, 2025 6:54:13 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 138.0.7204.100. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+Jul 11, 2025 7:32:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 138.0.7204.101. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 [Test worker] INFO  - ?[92m
   _____   ___   ___   _____     ___     _     ___   ___   ___   ___  
  |_   _| | __| / __| |_   _|   | _ \   /_\   / __| / __| | __| |   \ 

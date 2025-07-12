@@ -8,17 +8,28 @@ import net.serenitybdd.screenplay.questions.Text;
 import static co.edu.udea.calidadv.fleetguar360.userinterfaces.Fleetguar360Interface.*;
 
 public class ValidationAddUnitError implements Question<Boolean> {
+
+    private final String mesPlaca;
+    private final String mesModelo;
+    private final String mesCapacidad;
+
+    public ValidationAddUnitError(String placa, String modelo, String capacidad) {
+        this.mesPlaca = placa;
+        this.mesModelo = modelo;
+        this.mesCapacidad = capacidad;
+    }
+
     @Override
     public Boolean answeredBy(Actor actor) {
         String mesPlaca = Text.of(mesPlacaA).answeredBy(actor);
         String mesModelo = Text.of(mesModeloA).answeredBy(actor);
         String mesCapacidad = Text.of(mesCapacidadA).answeredBy(actor);
-        return mesPlaca.equals("La placa debe tener al menos 6 caracteres")
-                && mesModelo.equals("El modelo debe tener al menos 3 caracteres")
-                && mesCapacidad.equals("Debe ingresar la capacidad");
+        return mesPlaca.equals(mesPlaca)
+                && mesModelo.equals(mesModelo)
+                && mesCapacidad.equals(mesCapacidad);
     }
 
-    public static ValidationAddUnitError clickAgregarUnidad() {
-        return new ValidationAddUnitError();
+    public static ValidationAddUnitError clickAgregarUnidad(String mesPlaca, String mesModelo, String mesCapacidad) {
+        return new ValidationAddUnitError(mesPlaca, mesModelo, mesCapacidad);
     }
 }
